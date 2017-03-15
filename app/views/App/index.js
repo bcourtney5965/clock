@@ -6,19 +6,29 @@ import Seconds from './seconds.js';
 class App extends Component {
   constructor() {
     super()
+    this.hours;
+    this.minutes;
+    this.seconds;
   }
-  testLogger() {
-    console.log("hello from App");
+  componentDidMount() {
+    setInterval(() => {
+      var date = new Date
+      var hours = date.getHours();
+      this.hours = hours;
+      var minutes = date.getMinutes();
+      this.minutes = minutes;
+      var seconds = date.getSeconds();
+      this.seconds = seconds;
+      console.log(`${hours}:${minutes}:${seconds}`);
+    }, 1000)
   }
   render() {
     return (
       <div>
         <h1>Clock</h1>
-        <Hours hours={3} />
-        <Minutes minutes={30} />
-        <Seconds seconds={40} />
-        {/*
-      */}
+        <Hours hours={this.hours} />
+        <Minutes minutes={this.minutes} />
+        <Seconds seconds={this.seconds} />
       </div>
     )
   }
