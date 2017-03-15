@@ -1,20 +1,7 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router'
 
-class Hours extends Component {
-  constructor() {
-    super()
-  }
-  testLogger() {
-    console.log("hello from ");
-  }
-  render() {
-    return (
-      <div>
-        Hours
-      </div>
-    )
-  }
+const Hours = (props) => {
+  return <div>{props.hours}</div>;
 }
 
 export default Hours
